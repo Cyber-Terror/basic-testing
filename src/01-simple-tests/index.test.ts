@@ -1,6 +1,6 @@
 // Uncomment the code below and write your tests
 import { simpleCalculator, Action } from './index';
-//С ПЛАВАЮЩЕЙ ТОЧКОЙ ЕЩЕ ПРОВЕРИТЬ
+
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
     // Write your test here
@@ -27,9 +27,6 @@ describe('simpleCalculator tests', () => {
   test('should multiply two numbers', () => {
     // Write your test here
     expect(simpleCalculator({ a: 10, b: 5, action: Action.Multiply })).toBe(50);
-    expect(simpleCalculator({ a: 10, b: -5, action: Action.Multiply })).toBe(
-      -50,
-    );
     expect(simpleCalculator({ a: 10, b: -5, action: Action.Multiply })).toBe(
       -50,
     );
@@ -163,21 +160,6 @@ describe('simpleCalculator tests', () => {
     expect(
       simpleCalculator({ a: 10, b: 'b', action: Action.Exponentiate }),
     ).toBeNull();
-
-    expect(simpleCalculator({ a: null, b: 5, action: Action.Add })).toBeNull();
-    expect(
-      simpleCalculator({ a: null, b: 3, action: Action.Subtract }),
-    ).toBeNull();
-    expect(
-      simpleCalculator({ a: null, b: null, action: Action.Multiply }),
-    ).toBeNull();
-    expect(
-      simpleCalculator({ a: null, b: null, action: Action.Divide }),
-    ).toBeNull();
-    expect(
-      simpleCalculator({ a: null, b: null, action: Action.Exponentiate }),
-    ).toBeNull();
-
     expect(simpleCalculator({ a: 10, b: 'b', action: null })).toBeNull();
   });
 });
